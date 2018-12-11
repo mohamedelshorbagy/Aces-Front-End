@@ -94,7 +94,7 @@
 //         console.log(a, b, c)
 //     }
 //     var b = 10;
-//     // baz(b  * 4);
+//     baz(b  * 4);
 // }
 
 
@@ -141,10 +141,13 @@
 
 
 // function foo() {
+//     a = 10;
+//     console.log('before', bar());
+//     console.log('a', a);
 //     function bar() {
 //         return 8;
 //     }
-//     console.log('before', bar());
+//     var a;
 //     var bar = function () {
 //         return 3;
 //     }
@@ -266,12 +269,143 @@
 
 
 
+/**
+ * 
+ * 
+ * IIFE  
+ * 
+ */
+
+
+// Module Pattern
+// (function IIFE() {
+//     console.log('From IIFE', name);
+// })()
+
+// Interview Question
+// 'use strict';
+// (function IIFE() {
+//     var a = b = 3;
+//     // b = 3;
+// })()
+
+// console.log('b', b);
+// console.log('a', a);
+
+
+
+// var d = 10;
+
+
+// console.log(d);
+// console.log(window.d);
+
+
+
+// function foo() {
+//     var a = 10;
+// }
+
+// foo();
+
+
+
+// Another Solution
+// for (var i = 0; i < 5; i++) {
+//     (function IIFE(j) {
+//         setTimeout(function () {
+//             console.log(j);
+//         }, j * 1000);
+//     })(i)
+// }
+
+
+
+// Another Solution
+// for (var i = 0; i < 5; i++) {
+//     let j = i;
+//     setTimeout(function () {
+//         console.log(j);
+//     }, j * 1000);
+// }
+
+// Another Soln.
+// for (let i = 0; i < 5; i++) {
+//     setTimeout(function () {
+//         console.log(i);
+//     }, i * 1000);
+// }
+
+
+/**
+ * 
+ * TDZ ==> Temporal Dead Zone
+ * 
+ */
+
+// a = 10;
+// console.log(a);
+// let a;
+
+
+// Old Version Of (Let)
+
+// let(x = 5) {
+
+
+
+// }
+
+
+// let a = 10;
+// let a = 20; ===> X
+// a = 20;
+// console.log(a);
+
+// function foo() {
+//     'use strict';
 
 
 
 
+// }
+
+/**
+ * 
+ * const
+ * 
+ */
+// const PI = 3.14;
+// // PI = 10;
+// const a = [1, 2, 3];
+// a[0]++;
+// console.log(a);
+// var PI = Object.freeze([1, 2, 3]);
+// PI[0]++;
+// console.log(PI);
+// PI = [5, 6];
+// var a = [1, 2, 3];
+// a = [3, 5];
 
 
 
+/**
+ * 
+ * QA
+ */
 
+// for (let i = 0; i < 2; i++) {
+//     setTimeout(function () { console.log(i); });
+//     i++;
+// }
+
+
+// for (
+//     let i = (setTimeout(function () { console.log(i); }), 0);
+//     i < 2;
+//     i++
+// ) {
+//     setTimeout(function () { console.log('set inside loop', i) });
+//     i++;
+// }
 
